@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<div id="app">
+    <p>{{message}}</p>
+</div>
+<div id="app-2">
+  <span v-bind:title="lee">
+    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  </span>
+</div>
+<div id="app-3">
+   <p v-if="seen">
+       now you see me
+   </p>
+</div>
+
+</body>
+</html>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:
+        {
+            message:'没有报错 我没有些而已'
+
+        }
+
+    })
+    var app2 = new Vue({
+        el: '#app-2',//元素ID
+        data: {
+            lee: 'sheweilin is bitch ' + new Date()  //lee 就是绑定的值
+        }
+    })
+    var app3=new Vue({
+        el:'#app-3',
+        data:{
+            seen:true
+        }
+    })
+</script>
+
